@@ -62,10 +62,6 @@
     </style>
 </head>
 <body>
-    <audio id="sottofondo" autoplay loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
-        Il browser non supporta l'elemento audio.
-    </audio>
     <h1>Benvenuto su Simone Fontecchio</h1>
     <!-- animated basketballs -->
     <div class="basketball"></div>
@@ -84,5 +80,18 @@
         </div>
     </section>
 
+    <script>
+        // generate many basketballs dynamically
+        const count = 20;
+        for (let i = 0; i < count; i++) {
+            const ball = document.createElement('div');
+            ball.className = 'basketball';
+            // random delay and speed
+            const delay = Math.random() * 5;
+            ball.style.animationDelay = delay + 's';
+            ball.style.animationDuration = (5 + Math.random() * 5) + 's';
+            document.body.appendChild(ball);
+        }
+    </script>
 </body>
 </html>
