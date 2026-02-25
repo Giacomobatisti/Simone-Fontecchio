@@ -9,9 +9,13 @@
            A sporty, clean look */
         body {
             background-color: #f39c12; /* orange basketball color */
-            /* basketball texture pattern */
-            background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png');
-            background-repeat: repeat;
+            /* basketball texture pattern with Heat logo and Italian flag */
+            background-image: url('https://www.transparenttextures.com/patterns/asfalt-light.png'),
+                              url('https://upload.wikimedia.org/wikipedia/en/2/2b/Miami_Heat_logo.svg'),
+                              url('https://upload.wikimedia.org/wikipedia/en/0/03/Flag_of_Italy.svg');
+            background-repeat: repeat, no-repeat, no-repeat;
+            background-position: center center, top left, top right;
+            background-size: auto, 150px 150px, 150px 100px;
             color: #2c3e50;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
