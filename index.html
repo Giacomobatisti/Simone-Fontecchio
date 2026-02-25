@@ -59,6 +59,12 @@
             50% { top: 90%; left: 50%; transform: rotate(180deg); }
             100% { top: -60px; left: 100%; transform: rotate(360deg); }
         }
+        #playBasket img {
+            transition: transform 0.2s;
+        }
+        #playBasket:hover img {
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
@@ -84,6 +90,11 @@
             <img src="https://www.virtus.it/wp-content/uploads/2017/12/fontecchio.jpg" alt="Immagine progetto 3">
         </div>
     </section>
+    <div style="text-align:center; margin:20px;">
+        <button id="playBasket" title="Play/Pause musica" style="background:none;border:none;cursor:pointer;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png" alt="Play" width="60" height="60">
+        </button>
+    </div>
 
     <script>
         // generate many basketballs dynamically
@@ -97,6 +108,18 @@
             ball.style.animationDuration = (5 + Math.random() * 5) + 's';
             document.body.appendChild(ball);
         }
+        // play/pause control for basketball song
+        const audio = document.getElementById('basketSong');
+        const btn = document.getElementById('playBasket');
+        btn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                btn.title = 'Pause musica';
+            } else {
+                audio.pause();
+                btn.title = 'Play musica';
+            }
+        });
     </script>
 </body>
 </html>
